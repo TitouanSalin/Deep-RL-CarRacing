@@ -178,7 +178,7 @@ Deep-RL-CarRacing/
 ├── notebooks/
 │   └── analysis.ipynb
 │
-├── figures/
+├── videos/
 │   └── ...
 │
 ├── presentation/
