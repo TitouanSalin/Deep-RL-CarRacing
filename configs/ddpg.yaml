@@ -1,0 +1,27 @@
+# DDPG configuration for CarRacing-v2
+# =====================================
+
+algo: "DDPG"
+
+# DDPG hyperparameters
+policy: "CnnPolicy"
+learning_rate: 0.001
+buffer_size: 20_000
+learning_starts: 500
+batch_size: 64
+tau: 0.005
+gamma: 0.99
+train_freq: 1
+
+# Action noise
+action_noise_type: "normal"   # "normal" or "ornstein-uhlenbeck"
+action_noise_sigma: 0.2
+
+# Exploration experiment: vary noise intensity
+exploration_variants:
+  low_noise:
+    action_noise_sigma: 0.05
+  default_noise:
+    action_noise_sigma: 0.2
+  high_noise:
+    action_noise_sigma: 0.5

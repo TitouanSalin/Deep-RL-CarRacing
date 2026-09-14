@@ -1,0 +1,26 @@
+# PPO configuration for CarRacing-v2
+# ====================================
+
+algo: "PPO"
+
+# PPO hyperparameters
+policy: "CnnPolicy"
+learning_rate: 0.0003
+n_steps: 1024
+batch_size: 64
+n_epochs: 10
+gamma: 0.99
+gae_lambda: 0.95
+clip_range: 0.2
+ent_coef: 0.01
+vf_coef: 0.5
+max_grad_norm: 0.5
+
+# Exploration experiment: vary entropy coefficient
+exploration_variants:
+  low_entropy:
+    ent_coef: 0.0
+  default_entropy:
+    ent_coef: 0.01
+  high_entropy:
+    ent_coef: 0.05

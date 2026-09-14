@@ -1,0 +1,31 @@
+# Common configuration for all experiments
+# ==========================================
+
+# Training
+total_timesteps: 100_000
+eval_freq: 5_000           # Evaluate every N timesteps
+n_eval_episodes: 5         # Episodes per evaluation
+checkpoint_freq: 25_000    # Save model every N timesteps
+
+# Seeds for reproducibility
+seeds: [0, 1, 2]
+
+# Evaluation
+n_final_eval_episodes: 20
+
+# Generalization
+train_track_seeds: [100, 101, 102, 103, 104]
+test_track_seeds:  [200, 201, 202, 203, 204]
+n_generalization_episodes_per_seed: 3
+
+# Learning speed analysis
+reward_threshold: 300      # Threshold to measure "time to reach good performance"
+
+# Paths
+model_dir: "models"
+results_dir: "results"
+log_dir: "results/logs"
+
+# Environment
+env_id: "CarRacing-v2"
+frame_stack: 4             # Number of frames to stack

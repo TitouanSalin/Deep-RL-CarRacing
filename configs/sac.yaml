@@ -1,0 +1,24 @@
+# SAC configuration for CarRacing-v2
+# ====================================
+
+algo: "SAC"
+
+# SAC hyperparameters
+policy: "CnnPolicy"
+learning_rate: 0.0003
+buffer_size: 20_000
+learning_starts: 500
+batch_size: 64
+tau: 0.005
+gamma: 0.99
+train_freq: 1
+ent_coef: "auto"      # Automatic entropy tuning
+
+# Exploration experiment: vary entropy coefficient
+exploration_variants:
+  low_entropy:
+    ent_coef: 0.05
+  auto_entropy:
+    ent_coef: "auto"
+  high_entropy:
+    ent_coef: 0.2
